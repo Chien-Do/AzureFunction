@@ -30,9 +30,6 @@ namespace FunctionAppDemo
             {
                 sender.Add(message);
             }
-
-
-            var client = new SendGridClient(Environment.GetEnvironmentVariable("SendGridAPIKey"));
         }
     }
 }
