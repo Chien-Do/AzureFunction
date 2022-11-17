@@ -9,20 +9,20 @@ namespace FunctionAppDemo.DurableFunctions.FanInFanOut
 {
     public static class CheckItemStatusActivityFunc
     {
-        [FunctionName("CheckStatusServerActivity")]
+        [FunctionName("CheckItemStatusActivityFunc")]
         public static bool RunActivity([ActivityTrigger] RequestModel input, ILogger log)
         {
             log.LogInformation("-----Running CheckStatusServer Activity");
 
             if (input == null)
             {
-                log.LogError("Run CheckStatusServerActivity error: Input NULL");
+                log.LogError("Run CheckItemStatusActivityFunc error: Input NULL");
                 throw new ArgumentException("Server Information can not be NULL");
             }
 
             log.LogInformation($"CheckStatusServer: {input.ServerName}");
 
-            return !input.ForceCrash;
+            return !input.IsCrash;
         }
     }
 }

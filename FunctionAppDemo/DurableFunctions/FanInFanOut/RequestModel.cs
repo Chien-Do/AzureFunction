@@ -2,7 +2,7 @@
 {
     public class RequestModel
     {
-        public bool ForceCrash { get; set; }
+        public bool IsCrash { get; set; }
         public string ServerName { get; set; }
     }
 }

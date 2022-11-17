@@ -24,10 +24,10 @@ namespace FunctionAppDemo.DurableFunctions.FanInFanOut
                 var tasks = new List<Task<bool>>();
                 foreach (var server in input.servers)
                 {
-                    tasks.Add(context.CallActivityAsync<bool>("CheckStatusServerActivity", new RequestModel()
+                    tasks.Add(context.CallActivityAsync<bool>("CheckItemStatusActivityFunc", new RequestModel()
                     {
                         ServerName = server.Name,
-                        ForceCrash = server.IsCrash
+                        IsCrash = server.IsCrash
                     }));
                 }
 
