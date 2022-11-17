@@ -9,6 +9,7 @@ namespace FunctionAppDemo
 {
     public class GenerateLicenseFile
     {
+        
         [FunctionName("GenerateLicenseFile")]
         public async Task Run([QueueTrigger("orders", Connection = "AzureWebJobsStorage")]Order   order,
             IBinder binder,
